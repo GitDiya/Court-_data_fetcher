@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Court Data Fetcher</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        h2 { color: #333; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #007BFF; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2 align="center">Court Data Fetcher & Mini-Dashboard</h2>
+    <form method="POST">
+        <label>Case Type</label>
+        <select name="case_type" required>
+            <option value="Civil">Civil</option>
+            <option value="Criminal">Criminal</option>
+            <option value="Family">Family</option>
+        </select>
+
+        <label>Case Number</label>
+        <input type="text" name="case_number" placeholder="Enter Case Number" required>
+
+        <label>Filing Year</label>
+        <input type="text" name="filing_year" placeholder="Enter Filing Year" required>
+
+        <button type="submit">Fetch Case Details</button>
+    </form>
+</body>
+</html>

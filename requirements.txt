@@ -1,0 +1,5 @@
+flask
+requests
+beautifulsoup4
+lxml
+sqlite3-bro  # optional (for db browser)

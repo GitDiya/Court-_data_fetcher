@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Case Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .error { color: red; }
+        a { display: block; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if result.error %}
+            <h2 class="error">{{ result.error }}</h2>
+        {% else %}
+            <h2>Case Details</h2>
+            <p><strong>Parties:</strong> {{ result.parties }}</p>
+            <p><strong>Filing Date:</strong> {{ result.filing_date }}</p>
+            <p><strong>Next Hearing:</strong> {{ result.next_hearing }}</p>
+
+            <h3>Order/Judgment PDFs</h3>
+            {% if result.pdf_links %}
+                {% for link in result.pdf_links %}
+                    <a href="{{ link }}" target="_blank">Download PDF</a>
+                {% endfor %}
+            {% else %}
+                <p>No PDF orders available.</p>
+            {% endif %}
+        {% endif %}
+        <br>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
